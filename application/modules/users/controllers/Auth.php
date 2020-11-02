@@ -308,7 +308,7 @@ class Auth extends MY_Controller {
 		$this->session->unset_userdata('userData');
 		$this->session->unset_userdata('token_secret');
 		$this->session->unset_userdata('status');
-		// $this->facebook->destroy_session();
+		$this->facebook->destroy_session();
 
 		// log the user out
 		$logout = $this->ion_auth->logout();
