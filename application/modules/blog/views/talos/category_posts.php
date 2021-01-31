@@ -85,7 +85,7 @@
 						
 					<div class="six columns" data-scroll-reveal="enter bottom move 50px over 0.7s after 0.3s">
 						<div class="journal-wrap">
-							<img  src="<?= $category_post->featured_img ?>" width="100" height="400" alt="posts"/>
+							<img  src="<?= base_url($category_post->featured_img) ?>" width="100" height="400" alt="posts"/>
 							<div class="journal-det">
 								<h6><span><?php echo date("d-m-Y", strtotime($category_post->created_at)) ?>.</span></h6>
 								<h5>

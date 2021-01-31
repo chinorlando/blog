@@ -155,7 +155,11 @@ class Social_login extends MY_Controller
 							  // 'locale' 		   => $userProfile['locale'],
 							  // 'profile_url'    => 'https://www.facebook.com/'.$userProfile['id'],
 							  // 'picture_url'    => $userProfile['picture']['data']['url'] 
+							  'user_img' => $userProfile['picture']['data']['url']
 							  );
+			// print_r('<pre>');
+			// print_r($userData);
+			// exit();
 
 
 			$username  = $userData['first_name']." ".$userData['last_name'];

@@ -176,9 +176,9 @@ class Auth extends MY_Controller {
 			$this->load->config('social_auth_config');
 
 			//Twitter API Configuration
-			$consumerKey    = $this->config->item('client_id');
-			$consumerSecret = $this->config->item('secret_id');
-			$oauthCallback  = $this->config->item('call_back');
+			// $consumerKey    = $this->config->item('client_id');
+			// $consumerSecret = $this->config->item('secret_id');
+			// $oauthCallback  = $this->config->item('call_back');
 
 			// Google Project API Credentials
 			$clientId     = $this->config->item('google_client_id');
@@ -208,38 +208,38 @@ class Auth extends MY_Controller {
 			$this->session->unset_userdata('token_secret');
 
 			// Fresh authentication 
-			$connection = new TwitterOAuth($consumerKey, $consumerSecret);
-			$requestToken = $connection->getRequestToken($oauthCallback);
+			// $connection = new TwitterOAuth($consumerKey, $consumerSecret);
+			// $requestToken = $connection->getRequestToken($oauthCallback);
 
 			
 			// Received token info from twitter
-			$this->session->set_userdata('token',$requestToken['oauth_token']);
-			$this->session->set_userdata('token_secret',$requestToken['oauth_token_secret']);
+			// $this->session->set_userdata('token',$requestToken['oauth_token']);
+			// $this->session->set_userdata('token_secret',$requestToken['oauth_token_secret']);
 			
 			// Any value other than 200 is failure, so continue only if http code is 200
-			if($connection->http_code == '200')
-			{
-				// redirect user to twitter
-				$twitterUrl = $connection->getAuthorizeURL($requestToken['oauth_token']);
-				$data['oauthURL'] = $twitterUrl;
-			}
-			else{
-				$data['oauthURL'] = base_url().'social_login';
-				$data['error_msg'] = 'Error connecting to twitter! try again later!';
-			}
+			// if($connection->http_code == '200')
+			// {
+			// 	// redirect user to twitter
+			// 	$twitterUrl = $connection->getAuthorizeURL($requestToken['oauth_token']);
+			// 	$data['oauthURL'] = $twitterUrl;
+			// }
+			// else{
+			// 	$data['oauthURL'] = base_url().'social_login';
+			// 	$data['error_msg'] = 'Error connecting to twitter! try again later!';
+			// }
 
 			//google login url
-			$data['authUrl'] = $gClient->createAuthUrl();
+			// $data['authUrl'] = $gClient->createAuthUrl();
 
 			// facebook login URL
             $data['fbUrl'] =  $this->facebook->login_url();
 
             //passing linkedin credentials to view
-            $data['client_id']     = $this->config->item('linkedin_client_id');
-	        $data['client_secret'] = $this->config->item('linkedin_client_secret');
-	        $data['redirect_uri']  = $this->config->item('linkedin_redirect_uri');
-	        $data['csrf_token']    = $this->config->item('linkedin_csrf_token');
-	        $data['scopes']        = $this->config->item('linkedin_scopes');
+         //    $data['client_id']     = $this->config->item('linkedin_client_id');
+	        // $data['client_secret'] = $this->config->item('linkedin_client_secret');
+	        // $data['redirect_uri']  = $this->config->item('linkedin_redirect_uri');
+	        // $data['csrf_token']    = $this->config->item('linkedin_csrf_token');
+	        // $data['scopes']        = $this->config->item('linkedin_scopes');
 
 
 	        $data['reg_email']     = $this->config->item('reg_status');

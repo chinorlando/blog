@@ -35,7 +35,17 @@
 				                		} 
 				                		else {
 				                	?>
-				                    	<img src="<?php bs() ?>uploads/<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+
+					                	<?php if ($user->oauth_provider === 'local'): ?>
+					                		
+					                    	<img src="<?php bs() ?>uploads/<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+					                	<?php else: ?>
+					                		
+					                    	<img src="<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+					                	<?php endif ?>
+
+
+
 				                	<?php		
 				                		}
 				                		

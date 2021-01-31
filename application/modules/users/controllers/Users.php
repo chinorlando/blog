@@ -505,6 +505,10 @@ class Users extends MY_Controller {
         
         // Get output html
         $html = $this->output->get_output();
+        // para eliminar los espacios entre las etiquetas
+        // ------------------------------------------
+        $html = preg_replace('/>\s+</', '><', $html);
+        // ------------------------------------------
         
         // Load library
         $this->load->library('dompdf_gen');

@@ -145,3 +145,26 @@ $(document).ready(function() {
 }); 
 
 </script>
+
+<!-- ckeditor version 4 -->
+<script>
+   CKEDITOR.replace( 'content' );
+</script>
+
+<!-- ckeditor version 5 -->
+
+<!-- <script>
+    BalloonEditor
+        .create( document.querySelector( '#summernote' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script> -->
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#summernote' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

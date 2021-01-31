@@ -104,7 +104,9 @@ class GraphRawResponse
      */
     public function setHttpResponseCodeFromHeader($rawResponseHeader)
     {
-        preg_match('|HTTP/\d\.\d\s+(\d+)\s+.*|', $rawResponseHeader, $match);
+        // preg_match('|HTTP/\d\.\d\s+(\d+)\s+.*|', $rawResponseHeader, $match);
+        // el que funciiona
+        preg_match('/HTTP\/\d(?:\.\d)?\s+(\d+)\s+/',$rawResponseHeader, $match);
         $this->httpResponseCode = (int)$match[1];
     }
 

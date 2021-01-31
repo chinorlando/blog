@@ -50,6 +50,12 @@
 
 <script type="text/javascript" src="<?= base_url('public/assets/js/jquery-1.10.2.min.js')?>"></script>                          
 
+<!-- ckeditor version 4  -->
+<!-- <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script> -->
+<!-- ckeditor version 5  -->
+<script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script> -->
+
 <a href="javascript:;" id="demoskylo"></a>
 
 					<!-- Load jQuery -->
@@ -295,7 +301,12 @@
             		} 
             		else {
             	?>
-                	<img src="<?php bs() ?>uploads/<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+                	<?php if ($user->oauth_provider === 'local'): ?>
+                		<img src="<?php bs() ?>uploads/<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+                	<?php else: ?>
+                		
+                		<img src="<?php echo $user->user_img ?>" class="img-responsive img-circle" width="200" alt="">
+                	<?php endif ?>
             	<?php		
             		}
             		

@@ -65,10 +65,10 @@
                             <div class="other-links">
                                 <span>Or login with</span>
                                 <a href="<?= $fbUrl ?>">Facebook</a>
-                                <a href="<?= $oauthURL ?>">Twitter</a>
-                                <a href="<?= $authUrl ?>">Google</a>
-                                <a href="https://api.instagram.com/oauth/authorize/?client_id=cc0c6e3ffad5457eb811cf3bd99f0524&redirect_uri=http://localhost/login/users/Social_login/instagram_login&response_type=code&scope=public_content">Instagram</a>
-                                <a href="<?php echo "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}&state={$csrf_token}&scope={$scopes}"; ?>">Linkedin</a>
+                                <!-- <a href="<?= $oauthURL ?>">Twitter</a> -->
+                                <!-- <a href="<?= $authUrl ?>">Google</a> -->
+                                <!-- <a href="https://api.instagram.com/oauth/authorize/?client_id=cc0c6e3ffad5457eb811cf3bd99f0524&redirect_uri=http://localhost/login/users/Social_login/instagram_login&response_type=code&scope=public_content">Instagram</a> -->
+                                <!-- <a href="<?php echo "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}&state={$csrf_token}&scope={$scopes}"; ?>">Linkedin</a> -->
                             </div>
                         <?php endif ?>
                     </div>

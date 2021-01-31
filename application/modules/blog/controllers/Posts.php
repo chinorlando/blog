@@ -82,7 +82,8 @@ class Posts extends MY_Controller
             else
             {
                 $data = array('upload_data' => $this->upload->data());
-                $image = base_url().'uploads/blog_images/'.$data['upload_data']['file_name'];
+                // $image = base_url().'uploads/blog_images/'.$data['upload_data']['file_name'];
+                $image = 'uploads/blog_images/'.$data['upload_data']['file_name'];
             }
 			
 

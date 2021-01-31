@@ -81,7 +81,7 @@
 						<div id="owl-post-slider" class="owl-carousel owl-theme">
 													 
 							<div class="item">
-								<img src="<?php echo $post->featured_img ?>" width="100%">		
+								<img src="<?php echo base_url($post->featured_img) ?>" width="100%">		
 							</div>	
 													 
 						</div>	
